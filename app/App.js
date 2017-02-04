@@ -10,10 +10,6 @@ import Input from './Input'
 import Title from './Title'
 
 export default class App extends Component {
-    // constructor(props){
-    //     super(props)
-    //     this.state = {}
-    // }
     state = {}
     componentWillMount() {
         const {store} = this.props
