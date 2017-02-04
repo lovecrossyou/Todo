@@ -16,7 +16,7 @@ export const actionCreators = {
 }
 
 const initialState = {
-    todos: ['Click to remove', 'Learn React Native', 'Write Code', 'Ship App'],
+    todos: ['Click to remove', 'Learn Swift', 'Learn IOS', 'Learn React Native', 'Write Code', 'Ship App'],
 }
 
 export const reducer = (state = initialState, action) => {
