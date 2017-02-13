@@ -14,8 +14,8 @@ const store = createStore(reducer)
 
 // Import the App container component
 import App from './app/App'
-
+import Login from './app/Login'
 // Pass the store into the app container
 const AppWithStore = () => <App store={store} />
 
-AppRegistry.registerComponent('ToDo', () => AppWithStore)
+AppRegistry.registerComponent('ToDo', () => Login)
