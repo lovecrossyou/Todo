@@ -5,13 +5,13 @@ import React, {Component} from 'react';
 import {View, Text, AppRegistry, Image, TextInput, TouchableOpacity, PixelRatio,Dimensions} from 'react-native'
 
 
-// var {width,height} = Dimensions.get('window').size
+var {width,height} = Dimensions.get('window')
 class InputCell extends Component{
     render(){
         var {name,placeholder} = this.props.data
         return <View style={{marginTop: 20,flexDirection:'row',alignItems:'center',backgroundColor:'white'}}>
-            <Text style={{marginLeft:10,width:54}}>{name}</Text>
-            <View style={{alignItems:'stretch',flex:1}}>
+            <Text style={{marginLeft:10,width:60}}>{name}</Text>
+            <View style={{alignItems:'stretch',flex:1,marginRight:10}}>
                 <TextInput
                     placeholder={placeholder}
                     textAlign='left'
@@ -50,10 +50,14 @@ export default class Login extends Component {
                 </TouchableOpacity>
             </View>
             <View style={styles.botContainer}>
-                <View></View>
-                <Text>或</Text>
-                <View>
-                    <Image />
+                <View style={styles.botLine}>
+                    <View style={{backgroundColor:'#EEE5DE',height:1,width:width-20}}></View>
+                </View>
+                <View style={styles.wechatContainer}>
+                    <Image
+                        source={{uri: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1502327020,2968128604&fm=116&gp=0.jpg'}}
+                        style={{width:60,height:60,borderRadius:30,marginBottom:10}}
+                    />
                     <Text>微信快捷登陆</Text>
                 </View>
             </View>
@@ -69,12 +73,13 @@ const styles = {
         backgroundColor: '#f4f4f4'
     },
     input: {
+        // backgroundColor: 'red',
         height: 40
     },
     botContainer: {
-        flexDirection: 'row',
         justifyContent: 'space-between',
-        bottom: 20
+        bottom: 20,
+        alignItems:'center'
     },
     image: {
         width: 60,
@@ -82,6 +87,15 @@ const styles = {
         marginTop: 20 + 64,
         alignSelf: 'center',
         borderRadius: 30
+    },
+    botLine:{
+        backgroundColor:'#EEE0E5',
+        flex:1,
+        alignItems:'center'
+    },
+    wechatContainer:{
+        marginTop:20,
+        alignItems:'center'
     }
 }
 
