@@ -7,7 +7,6 @@
 import React, { Component } from 'react';
 import {AppRegistry} from 'react-native'
 import { createStore } from 'redux'
-
 // Import the reducer and create a store
 import { reducer } from './app/todoListRedux'
 const store = createStore(reducer)

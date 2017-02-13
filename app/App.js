@@ -8,6 +8,7 @@ import { actionCreators } from './todoListRedux'
 import List from './List'
 import Input from './Input'
 import Title from './Title'
+import codePush from "react-native-code-push";
 
 export default class App extends Component {
     state = {}
@@ -21,6 +22,11 @@ export default class App extends Component {
             const {todos} = store.getState()
             this.setState({todos})
         })
+
+        codePush.sync({
+            updateDialog: true,
+            installMode: codePush.InstallMode.IMMEDIATE
+        });
     }
 
     componentWillUnmount() {
